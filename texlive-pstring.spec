@@ -1,6 +1,6 @@
 Name:		texlive-pstring
 Version:	42857
-Release:	1
+Release:	2
 Summary:	Typeset sequences with justification pointers
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/pstring
