@@ -3,7 +3,7 @@ Version:	42857
 Release:	2
 Summary:	Typeset sequences with justification pointers
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/pstring
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/pstring
 License:	pd
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pstring.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pstring.doc.r%{version}.tar.xz
