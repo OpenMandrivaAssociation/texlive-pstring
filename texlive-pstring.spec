@@ -1,40 +1,23 @@
-Name:		texlive-pstring
-Version:	42857
-Release:	2
+%global tl_name pstring
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
 Summary:	Typeset sequences with justification pointers
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/pstring
 License:	pd
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pstring.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pstring.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pstring.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pstring.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package lets you typeset justified sequences, also called
-pointing strings. It's used for instance, in research papers
-about Game Semantics to represent sequence of game moves with
-their associated justification pointers. Depending on wether
-using LaTeX or pdfLaTeX, the package uses PSTricks and pst-node
-respectively pgf/TikZ.
+This package lets you typeset justified sequences, also called pointing
+strings. It's used for instance, in research papers about Game Semantics
+to represent sequence of game moves with their associated justification
+pointers. Depending on wether using LaTeX or pdfLaTeX, the package uses
+PSTricks and pst-node respectively pgf/TikZ.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/pstring
-%doc %{_texmfdistdir}/doc/latex/pstring
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
